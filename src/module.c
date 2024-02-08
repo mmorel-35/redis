@@ -13439,7 +13439,7 @@ int RM_DefragShouldStop(RedisModuleDefragCtx *ctx) {
     return (ctx->endtime != 0 && ctx->endtime < ustime());
 }
 
-/* Store an arbitrary cursor value for future re-use.
+/* Store an arbitrary cursor value for future reuse.
  *
  * This should only be called if RM_DefragShouldStop() has returned a non-zero
  * value and the defrag callback is about to exit without fully iterating its

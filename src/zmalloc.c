@@ -640,7 +640,7 @@ int zmalloc_get_allocator_info(size_t *allocated,
      * heap mappings. */
     je_mallctl("stats.resident", resident, &sz, NULL, 0);
     /* Unlike resident, this doesn't not include the pages jemalloc reserves
-     * for re-use (purge will clean that). */
+     * for reuse (purge will clean that). */
     je_mallctl("stats.active", active, &sz, NULL, 0);
     /* Unlike zmalloc_used_memory, this matches the stats.resident by taking
      * into account all allocations done by this process (not only zmalloc). */
@@ -691,7 +691,7 @@ int jemalloc_purge(void) {
 /* For proc_pidinfo() used later in zmalloc_get_smap_bytes_by_field().
  * Note that this file cannot be included in zmalloc.h because it includes
  * a Darwin queue.h file where there is a "LIST_HEAD" macro (!) defined
- * conficting with Redis user code. */
+ * conflicting with Redis user code. */
 #include <libproc.h>
 #endif
 

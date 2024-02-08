@@ -249,7 +249,7 @@ int evictionPoolPopulate(redisDb *db, kvstore *samplekvs, struct evictionPoolEnt
  * LFU (Least Frequently Used) implementation.
 
  * We have 24 total bits of space in each object in order to implement
- * an LFU (Least Frequently Used) eviction policy, since we re-use the
+ * an LFU (Least Frequently Used) eviction policy, since we reuse the
  * LRU field for this purpose.
  *
  * We split the 24 bits into two fields:
