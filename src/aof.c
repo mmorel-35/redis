@@ -1229,7 +1229,7 @@ void flushAppendOnlyFile(int force) {
     server.aof_current_size += nwritten;
     server.aof_last_incr_size += nwritten;
 
-    /* Re-use AOF buffer when it is small enough. The maximum comes from the
+    /* Reuse AOF buffer when it is small enough. The maximum comes from the
      * arena size of 4k minus some overhead (but is otherwise arbitrary). */
     if ((sdslen(server.aof_buf)+sdsavail(server.aof_buf)) < 4000) {
         sdsclear(server.aof_buf);
